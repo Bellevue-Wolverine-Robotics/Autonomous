@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import org.usfirst.frc.team949.robot.commands.JoyStickDrive;
 import org.usfirst.frc.team949.robot.commands.TurnGoLeft;
 import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
 
@@ -34,7 +35,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		chooser.addDefault("Default Auto", new TurnGoLeft());
+		chooser.addDefault("Default Auto", new JoyStickDrive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 		String gameData;
