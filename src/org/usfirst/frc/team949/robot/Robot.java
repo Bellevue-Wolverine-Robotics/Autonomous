@@ -38,14 +38,14 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", new JoyStickDrive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if(gameData.charAt(0) == 'L')
-		{
-			new TurnGoLeft();
-		} else {
-			System.out.println("Not implemented yet");
-		}
+//		String gameData;
+//		gameData = DriverStation.getInstance().getGameSpecificMessage();
+//		if(gameData.charAt(0) == 'L')
+//		{
+//			new TurnGoLeft();
+//		} else {
+//			System.out.println("Not implemented yet");
+//		}
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		Scheduler.getInstance().run();
+		driveTrain.drive(oi.stick.getY(), oi.stick.getZ());
 	}
 
 	/**
@@ -121,6 +121,6 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		LiveWindow.run();
+		
 	}
 }

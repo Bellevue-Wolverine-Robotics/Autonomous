@@ -4,6 +4,7 @@ import org.usfirst.frc.team949.robot.commands.JoyStickDrive;
 
 import com.ctre.CANTalon;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -20,30 +21,45 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class DriveTrain extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	
-	private SpeedController fL = new Talon(5);
-	private SpeedController bL = new Talon(6);
-	private SpeedControllerGroup left = new SpeedControllerGroup(fL, bL);
-	private SpeedController fR = new Talon(1);
-	private SpeedController bR = new Talon(3);
-	private SpeedControllerGroup right = new SpeedControllerGroup(fR, bR);
-	
-	private DifferentialDrive drive = new DifferentialDrive(left, right);
-	
+
+
+	private DifferentialDrive drive;
+
 	public final ADXRS450_Gyro g = new ADXRS450_Gyro();
+
+	private SpeedControllerGroup r;
+	private SpeedControllerGroup l;
+
+	private WPI_TalonSRX r0, r1, r2,
+					l0, l1, l2;
 
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
-		setDefaultCommand(new JoyStickDrive());
+		// setDefaultCommand(new JoyStickDrive());
 
-		
 	}
-	
+
 	public DriveTrain() {
 		g.calibrate();
+		r0 = new WPI_TalonSRX(0);
+		r1 = new WPI_TalonSRX(1);
+		r2 = new WPI_TalonSRX(2);
+				
+		l0 = new WPI_TalonSRX(3);
+		l1 = new WPI_TalonSRX(4);
+		l2 = new WPI_TalonSRX(5);
+		
+		r = new SpeedControllerGroup(r0, r1, r2);
+		l = new SpeedControllerGroup(l0, l1, l2);
+		
+		l.setInverted(true);
+		r.setInverted(false);
+		
+		drive = new DifferentialDrive(l, r);
+		
 		drive.setSafetyEnabled(false);
 	}
-	
+
 	public void drive(double moveValue, double rotateValue) {
 		drive.arcadeDrive(moveValue, rotateValue);
 	}
