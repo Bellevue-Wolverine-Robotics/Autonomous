@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.buttons.Button;
 public class OI {
 	
 	public Joystick stick = new Joystick(0);
+	public Joystick trigger=new Joystick(1);
+	public Joystick sideButton=new Joystick(2);
 	//// CREATING BUTTONS hahahah
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
