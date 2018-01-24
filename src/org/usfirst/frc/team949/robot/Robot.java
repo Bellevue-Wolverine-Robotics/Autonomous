@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team949.robot.commands.JoyStickDrive;
 import org.usfirst.frc.team949.robot.commands.TurnGoLeft;
 import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team949.robot.subsystems.TakeIn_PutOut;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,6 +24,7 @@ import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
 public class Robot extends IterativeRobot {
 
 	public static final DriveTrain driveTrain = new DriveTrain();
+	public static final TakeIn_PutOut TIPO = new TakeIn_PutOut();
 	public static OI oi;
 
 	Command autonomousCommand;

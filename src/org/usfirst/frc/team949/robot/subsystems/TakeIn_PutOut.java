@@ -10,17 +10,25 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class TakeIn_PutOut extends Subsystem {
 	private WPI_TalonSRX m1;
 	private WPI_TalonSRX m2;
+	private WPI_TalonSRX m3;
+	private WPI_TalonSRX m4;
 	public void takeIn(){
 		m1.set(-1);
 		m2.set(-1);
+		m3.set(-1);
+		m4.set(-1);
 	}
 	public void putOut(){
 		m1.set(1);
 		m2.set(1);
+		m3.set(1);
+		m4.set(1);
 	}
 	public void stop(){
 		m1.set(0);
 		m2.set(0);
+		m3.set(0);
+		m4.set(0);
 	}
 
     // Put methods for controlling this subsystem

@@ -9,9 +9,18 @@ import edu.wpi.first.wpilibj.buttons.Button;
  */
 public class OI {
 	
-	public Joystick stick = new Joystick(0);
-	public Joystick trigger=new Joystick(1);
-	public Joystick sideButton=new Joystick(2);
+	public Joystick drive = new Joystick(0);
+	public Joystick operator=new Joystick(0);
+	public boolean operatorTriggerIsPressed(){
+		return operator.getTrigger();
+	}
+	public boolean operatorSideButtonIsPressed(){
+		return operator.getRawButton(2);
+	}
+	public void inTake(){
+		RobotMap.inTakeLeft
+	}
+	
 	//// CREATING BUTTONS hahahah
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
