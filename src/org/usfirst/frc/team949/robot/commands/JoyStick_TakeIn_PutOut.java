@@ -24,7 +24,7 @@ public class JoyStick_TakeIn_PutOut extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (Robot.oi.operatorSideButtonIsPressed() && Robot.oi.operatorTriggerIsPressed()) {
-//    		 Subsystem tIPO=new TakeIn_PutOut();
+//    		 Subsystem tIPO=new TakeIn_PutOut(); 
     		Robot.TIPO.putOut();
     	}
     	else if(Robot.oi.operatorTriggerIsPressed()){
