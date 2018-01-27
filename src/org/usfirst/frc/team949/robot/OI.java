@@ -1,7 +1,9 @@
 package org.usfirst.frc.team949.robot;
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 //i am the dude man!
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -9,9 +11,45 @@ import edu.wpi.first.wpilibj.buttons.Button;
  */
 public class OI {
 	
-	public Joystick stick = new Joystick(0);
-	public Joystick trigger=new Joystick(1);
-	public Joystick sideButton=new Joystick(2);
+	private Joystick driveStick;
+	private Joystick operatorStick;
+	
+	private Button driveTrigger;
+	private Button driveSideButton;
+	
+	public OI() 
+	{
+		driveStick = new Joystick(0);
+		operatorStick = new Joystick(1);
+		
+		driveTrigger = new JoystickButton(driveStick, 1);
+		driveSideButton = new JoystickButton(driveStick, 2);
+		
+		
+	}
+	
+	public double getDriveX() 
+	{
+		return driveStick.getX();
+	}
+	public double getDriveY() 
+	{
+		return driveStick.getY();
+	}
+	public double getDriveZ() 
+	{
+		return driveStick.getZ();
+	}
+	
+	public boolean isDriveButtonDown(int buttonNumber)
+	{
+		return driveStick.getRawButton(buttonNumber);
+	}
+	public boolean isOperatorButtonDown(int buttonNumber) 
+	{
+		return operatorStick.getRawButton(buttonNumber);
+	}
+	
 	//// CREATING BUTTONS hahahah
 	// One type of button is a joystick button which is any button on a
 	//// joystick.

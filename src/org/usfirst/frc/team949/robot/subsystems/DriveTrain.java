@@ -1,5 +1,6 @@
 package org.usfirst.frc.team949.robot.subsystems;
 
+import org.usfirst.frc.team949.robot.RobotMap;
 import org.usfirst.frc.team949.robot.commands.JoyStickDrive;
 
 import com.ctre.CANTalon;
@@ -35,19 +36,18 @@ public class DriveTrain extends Subsystem {
 
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
-		// setDefaultCommand(new JoyStickDrive());
-
+		setDefaultCommand(new JoyStickDrive());
 	}
 
 	public DriveTrain() {
 		g.calibrate();
-		r0 = new WPI_TalonSRX(0);
-		r1 = new WPI_TalonSRX(1);
-		r2 = new WPI_TalonSRX(2);
+		r0 = new WPI_TalonSRX(RobotMap.rightDriveMotor1);
+		r1 = new WPI_TalonSRX(RobotMap.rightDriveMotor2);
+		r2 = new WPI_TalonSRX(RobotMap.rightDriveMotor3);
 				
-		l0 = new WPI_TalonSRX(3);
-		l1 = new WPI_TalonSRX(4);
-		l2 = new WPI_TalonSRX(5);
+		l0 = new WPI_TalonSRX(RobotMap.leftDriveMotor1);
+		l1 = new WPI_TalonSRX(RobotMap.leftDriveMotor2);
+		l2 = new WPI_TalonSRX(RobotMap.leftDriveMotor3);
 		
 		r = new SpeedControllerGroup(r0, r1, r2);
 		l = new SpeedControllerGroup(l0, l1, l2);

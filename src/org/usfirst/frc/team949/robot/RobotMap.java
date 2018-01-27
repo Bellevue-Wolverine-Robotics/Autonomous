@@ -8,11 +8,19 @@ package org.usfirst.frc.team949.robot;
  */
 public class RobotMap {
 	// MOTORS
-	public final static int leftDriveMotor1 = 1;
-	public final static int leftDriveMotor2 = 2;
-	public final static int leftDriveMotor3 = 3;
+	public final static int leftDriveMotor1 = 3;
+	public final static int leftDriveMotor2 = 4;
+	public final static int leftDriveMotor3 = 5;
 	
-	public final static int rightDriveMotor1 = 4;
-	public final static int rightDriveMotor2 = 5;
-	public final static int rightDriveMotor3 = 6;
+	public final static int rightDriveMotor1 = 0;
+	public final static int rightDriveMotor2 = 1;
+	public final static int rightDriveMotor3 = 2;
+	
+	public final static int leftPickupMotor = 6;
+	public final static int rightPickupMotor = 7;
+	
+	// PNEUMATICS
+	
+	// SENSORS
+	
 }
