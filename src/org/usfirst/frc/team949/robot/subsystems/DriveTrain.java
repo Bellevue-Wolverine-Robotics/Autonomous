@@ -21,12 +21,10 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
  *
  */
 public class DriveTrain extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
+	
 	private DifferentialDrive drive;
 
-	private final ADXRS450_Gyro g = new ADXRS450_Gyro();
+	private final ADXRS450_Gyro g;
 
 	private SpeedControllerGroup r;
 	private SpeedControllerGroup l;
@@ -40,7 +38,9 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public DriveTrain() {
+		g = new ADXRS450_Gyro();
 		g.calibrate();
+		
 		r0 = new WPI_TalonSRX(RobotMap.rightDriveMotor1);
 		r1 = new WPI_TalonSRX(RobotMap.rightDriveMotor2);
 		r2 = new WPI_TalonSRX(RobotMap.rightDriveMotor3);
@@ -52,8 +52,8 @@ public class DriveTrain extends Subsystem {
 		r = new SpeedControllerGroup(r0, r1, r2);
 		l = new SpeedControllerGroup(l0, l1, l2);
 		
-		l.setInverted(true);
 		r.setInverted(false);
+		l.setInverted(true);
 		
 		drive = new DifferentialDrive(l, r);
 		

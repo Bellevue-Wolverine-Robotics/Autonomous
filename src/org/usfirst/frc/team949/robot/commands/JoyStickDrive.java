@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.command.Command;
 public class JoyStickDrive extends Command {
 	
 	
-	
     public JoyStickDrive() {
     	requires(Robot.driveTrain);
     }

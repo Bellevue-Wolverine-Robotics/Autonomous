@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team949.robot.commands.JoyStickDrive;
 import org.usfirst.frc.team949.robot.commands.TurnGoLeft;
 import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team949.robot.subsystems.Pickup;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,12 +23,13 @@ import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
  * directory.
  */
 public class Robot extends TimedRobot {
-
+	// Please keep these as public unless you have a good reason.
 	public static final DriveTrain driveTrain = new DriveTrain();
+	public static final Pickup pickup = new Pickup();
 	public static OI oi;
 
-	Command autonomousCommand;
-	SendableChooser<Command> chooser = new SendableChooser<>();
+	private Command autonomousCommand;
+	private SendableChooser<Command> chooser = new SendableChooser<>();
 
 	/**
 	 * This function is run when the robot is first started up and should be
