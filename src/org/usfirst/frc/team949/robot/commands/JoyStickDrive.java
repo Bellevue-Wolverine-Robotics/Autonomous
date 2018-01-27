@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class JoyStickDrive extends Command {
-
+	
+	
+	
     public JoyStickDrive() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     	requires(Robot.driveTrain);
     }
 
@@ -21,7 +21,8 @@ public class JoyStickDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.drive(Robot.oi.stick.getX(), Robot.oi.stick.getZ());
+    	
+    	Robot.driveTrain.drive(Robot.oi.getDriveX(), Robot.oi.getDriveZ());
     }
 
     // Make this return true when this Command no longer needs to run execute()

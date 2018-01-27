@@ -11,14 +11,14 @@ import org.usfirst.frc.team949.robot.Robot;
  */
 public class Turn extends Command {
 	
-	private ADXRS450_Gyro g = Robot.driveTrain.g;
+	private ADXRS450_Gyro g;
 	private PIDController pid;
 	private double output;
 	private double deg;
 	
 	public Turn(double degree) {
-		// Use requires() here to declare subsystem dependencies
 		requires(Robot.driveTrain);
+		g = Robot.driveTrain.getGyro();
 		deg = degree;
 		pid = new PIDController(1/ (deg * 1.5), 0.000465, 0, g, d -> output = d);
 	}

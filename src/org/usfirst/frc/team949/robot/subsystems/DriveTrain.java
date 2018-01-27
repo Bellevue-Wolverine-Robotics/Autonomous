@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 /**
  *
@@ -23,10 +24,9 @@ public class DriveTrain extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 
-
 	private DifferentialDrive drive;
 
-	public final ADXRS450_Gyro g = new ADXRS450_Gyro();
+	private final ADXRS450_Gyro g = new ADXRS450_Gyro();
 
 	private SpeedControllerGroup r;
 	private SpeedControllerGroup l;
@@ -59,8 +59,15 @@ public class DriveTrain extends Subsystem {
 		
 		drive.setSafetyEnabled(false);
 	}
-
+	
+	// Drive Methods 
 	public void drive(double moveValue, double rotateValue) {
 		drive.arcadeDrive(moveValue, rotateValue);
+	}
+	
+	// ACCESSORS
+	public ADXRS450_Gyro getGyro() 
+	{
+		return g;
 	}
 }
