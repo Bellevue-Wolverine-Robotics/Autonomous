@@ -29,8 +29,8 @@ public class DriveTrain extends Subsystem {
 	private SpeedControllerGroup r;
 	private SpeedControllerGroup l;
 
-	private WPI_TalonSRX r0, r1, r2,
-					l0, l1, l2;
+	private WPI_TalonSRX r0, r1,
+					l0, l1;
 
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
@@ -43,14 +43,13 @@ public class DriveTrain extends Subsystem {
 		
 		r0 = new WPI_TalonSRX(RobotMap.rightDriveMotor1);
 		r1 = new WPI_TalonSRX(RobotMap.rightDriveMotor2);
-		r2 = new WPI_TalonSRX(RobotMap.rightDriveMotor3);
-				
+
 		l0 = new WPI_TalonSRX(RobotMap.leftDriveMotor1);
 		l1 = new WPI_TalonSRX(RobotMap.leftDriveMotor2);
-		l2 = new WPI_TalonSRX(RobotMap.leftDriveMotor3);
+
 		
-		r = new SpeedControllerGroup(r0, r1, r2);
-		l = new SpeedControllerGroup(l0, l1, l2);
+		r = new SpeedControllerGroup(r0, r1);
+		l = new SpeedControllerGroup(l0, l1);
 		
 		r.setInverted(false);
 		l.setInverted(true);
