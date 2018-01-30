@@ -6,7 +6,9 @@ package org.usfirst.frc.team949.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
 public class RobotMap {
+	
 	// MOTORS
 	// DriveTrain
 	public final static int leftDriveMotor1 = 3;
