@@ -19,35 +19,35 @@ public class OI {
 	
 	public OI() 
 	{
-		driveStick = new Joystick(0);
-		operatorStick = new Joystick(1);
+		this.driveStick = new Joystick(0);
+		this.operatorStick = new Joystick(1);
 		
-		driveTrigger = new JoystickButton(driveStick, 1);
-		driveSideButton = new JoystickButton(driveStick, 2);
+		this.driveTrigger = new JoystickButton(driveStick, 1);
+		this.driveSideButton = new JoystickButton(driveStick, 2);
 		
 		
 	}
 	
 	public double getDriveX() 
 	{
-		return driveStick.getX();
+		return this.driveStick.getX();
 	}
 	public double getDriveY() 
 	{
-		return driveStick.getY();
+		return this.driveStick.getY();
 	}
 	public double getDriveZ() 
 	{
-		return driveStick.getZ();
+		return this.driveStick.getZ();
 	}
 	
 	public boolean isDriveButtonDown(int buttonNumber)
 	{
-		return driveStick.getRawButton(buttonNumber);
+		return this.driveStick.getRawButton(buttonNumber);
 	}
 	public boolean isOperatorButtonDown(int buttonNumber) 
 	{
-		return operatorStick.getRawButton(buttonNumber);
+		return this.operatorStick.getRawButton(buttonNumber);
 	}
 	
 	//// CREATING BUTTONS hahahah

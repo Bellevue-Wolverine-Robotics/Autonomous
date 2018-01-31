@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		chooser.addDefault("Default Auto", new JoyStickDrive());
+		this.chooser.addDefault("Default Auto", new JoyStickDrive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 //		// TODO: Put this in DisabledPeriodic or AutonomousInit

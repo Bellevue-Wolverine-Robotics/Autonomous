@@ -38,35 +38,36 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public DriveTrain() {
-		g = new ADXRS450_Gyro();
-		g.calibrate();
-		
-		r0 = new WPI_TalonSRX(RobotMap.rightDriveMotor1);
-		r1 = new WPI_TalonSRX(RobotMap.rightDriveMotor2);
+		// Christoff contributed all of the "this." code in this class
+		this.g = new ADXRS450_Gyro();
+		this.g.calibrate();
 
-		l0 = new WPI_TalonSRX(RobotMap.leftDriveMotor1);
-		l1 = new WPI_TalonSRX(RobotMap.leftDriveMotor2);
+		this.r0 = new WPI_TalonSRX(RobotMap.rightDriveMotor1);
+		this.r1 = new WPI_TalonSRX(RobotMap.rightDriveMotor2);
+
+		this.l0 = new WPI_TalonSRX(RobotMap.leftDriveMotor1);
+		this.l1 = new WPI_TalonSRX(RobotMap.leftDriveMotor2);
 
 		
-		r = new SpeedControllerGroup(r0, r1);
-		l = new SpeedControllerGroup(l0, l1);
+		this.r = new SpeedControllerGroup(r0, r1);
+		this.l = new SpeedControllerGroup(l0, l1);
 		
-		r.setInverted(false);
-		l.setInverted(true);
+		this.r.setInverted(false);
+		this.l.setInverted(true);
 		
-		drive = new DifferentialDrive(l, r);
+		this.drive = new DifferentialDrive(l, r);
 		
-		drive.setSafetyEnabled(false);
+		this.drive.setSafetyEnabled(false);
 	}
 	
 	// Drive Methods 
 	public void drive(double moveValue, double rotateValue) {
-		drive.arcadeDrive(moveValue, rotateValue);
+		this.drive.arcadeDrive(moveValue, rotateValue);
 	}
 	
 	// ACCESSORS
 	public ADXRS450_Gyro getGyro() 
 	{
-		return g;
+		return this.g;
 	}
 }

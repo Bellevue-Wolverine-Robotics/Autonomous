@@ -20,8 +20,8 @@ public class Pickup extends Subsystem {
 	
 	public Pickup() 
 	{
-		rightPickupMotor = new WPI_TalonSRX(RobotMap.rightPickupMotor);
-		leftPickupMotor = new WPI_TalonSRX(RobotMap.leftPickupMotor);
+		this.rightPickupMotor = new WPI_TalonSRX(RobotMap.rightPickupMotor);
+		this.leftPickupMotor = new WPI_TalonSRX(RobotMap.leftPickupMotor);
 	}
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -41,8 +41,8 @@ public class Pickup extends Subsystem {
 	 */
 	private void setBothMotors(double rate) 
 	{
-		rightPickupMotor.set(rate);
-		leftPickupMotor.set(rate);
+		this.rightPickupMotor.set(rate);
+		this.leftPickupMotor.set(rate);
 	}
 }
 
